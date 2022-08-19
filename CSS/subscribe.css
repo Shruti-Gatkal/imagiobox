@@ -1,0 +1,37 @@
+@media (min-width: 1025px) {
+.h-custom {
+height: 100vh !important;
+}
+}
+
+
+/* Navbar */
+
+.navbar-div{
+  background-color: white;
+  width: 100%;
+
+}
+
+
+.nav-link{
+font-family: sans-serif;
+font-size: 1rem;
+font-weight: bold;
+color: black;
+
+}
+.nav-home{
+  color: yellow;
+}
+.logo-img{
+  width: 28%;
+  padding-top:1% ;
+  padding-left: 15%;
+}
+.menu-div{
+  padding-right: 12%;
+}
+.nav-option{
+  padding-right: 20%;
+}

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>subscribe</title>
+  <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+  <link rel="icon" href="images/favicon.ico">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/subscribe.css">
+</head>
+
+<body>
+
+  <!-- Nav Bar -->
+  <section id="navbar">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg fixed-top  navbar-div">
+        <img class="logo-img" src="images/logo.png" alt="">
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse nav-option" id="navbarTogglerDemo02">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link nav-home" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="register.html">Register</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="subscription.html">Shop-Now</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">FAQ</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Blog</a>
+            </li>
+
+          </ul>
+        </div>
+
+      </nav>
+
+  </section>
+
+  <!-- Subscription form-->
+  <section class="h-100 h-custom" style="background-color: #8fc4b7;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-lg-8 col-xl-6">
+          <div class="card rounded-3">
+            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/img3.webp" class="w-100" style="border-top-left-radius: .3rem; border-top-right-radius: .3rem;" alt="Sample photo">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="mb-4 pb-2 pb-md-0 mb-md-5 px-md-2">Place Order</h3>
+
+              <form class="px-md-2">
+
+                <div class="form-outline mb-4">
+                  <input type="text" id="mail" class="form-control" onfocusout="checkMail(this.value)" />
+                  <label class="form-label" for="form3Example1q">Email</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="name" class="form-control" onfocusout="validateName(this.value)" />
+                  <label class="form-label" for="form3Example1q">Name</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="text" id="address" class="form-control" onfocusout="validateAddress(this.value)" />
+                  <label class="form-label" for="form3Example1q">Address</label>
+                </div>
+                <div class="form-outline mb-4">
+                  <input type="number" id="contact" class="form-control" onfocusout="validateContact(this.value)" />
+                  <label class="form-label" for="form3Example1q">Contact No</label>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-4">
+
+                    <select class="select" id="package" onchange="selectPack()">
+                      <option value="1" disabled>Package</option>
+                      <option value="free">Free</option>
+                      <option value="beginner">Beginner</option>
+                      <option value="pro">Pro</option>
+                    </select>
+
+                  </div>
+
+                  <div class="col-md-6">
+
+                    <div class="form-outline">
+                      <input type="text" id="price" class="form-control" value="Rs." />
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+
+
+
+
+                <div class="mb-4">
+
+                  <select class="select">
+                    <option value="1" disabled>Payment Mode</option>
+                    <option value="2">Cash On Delivery</option>
+                    <option value="3">UPI/QR</option>
+                    <option value="4">Net Banking</option>
+                  </select>
+
+                </div>
+                <div class="form-check d-flex justify-content-center mb-5">
+                  <input class="form-check-input me-2" type="checkbox" value="" id="check_term" />
+                  <label class="form-check-label" for="form2Example3">
+                    I agree all statements in <a href="#!">Terms of service</a> to confirm Order.
+                  </label>
+                </div>
+
+
+
+                <button type="submit" class="btn btn-success btn-lg mb-1" onclick="placeOrder()">Confirm Order</button>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    function validateName(name) {
+      if (name.length <= 0) {
+        alert("Name is mandatory!s")
+      }
+    }
+
+    function validateAddress(add) {
+      if (add.length <= 0) {
+        alert("Address is mandatory!s")
+      }
+    }
+
+    function checkMail(mail) {
+      var index = mail.indexOf('@');
+      if (index < 0) {
+        alert("Email Id is incorrect, Please Check!")
+      }
+
+    }
+
+    function validateContact(contact) {
+      if (contact.length != 10) {
+        alert("Invalid Contact number !");
+      }
+    }
+
+    function selectPack() {
+      var x = document.getElementById("package").value;
+      if (x == "free") {
+        document.getElementById("price").value = "Rs.00/-";
+      } else if (x == "beginner") {
+        document.getElementById("price").value = "Rs.550/-";
+      } else {
+        document.getElementById("price").value = "Rs.1750/-";
+      }
+
+    }
+
+    function placeOrder() {
+      var check1 = document.getElementById("check_term");
+      if (check1.checked == true) {
+        alert("Your Order Placed Successfully!!")
+        window.open("index.html");
+      } else {
+        alert("Check term & Conditions first!")
+      }
+    }
+  </script>
+</body>
+
+</html>
